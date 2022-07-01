@@ -1,0 +1,44 @@
+{% load static %}
+{% include 'header.html' with title="Students" %}
+
+<br>
+<div class="container navbar">
+    <header class="navbar">
+        <nav>
+            <ul class="nav_links">
+                <li class="navbar"><a class="navbar" href="../classes/">My Classes</a></li>
+                <li class="navbar"><a class="navbar" href="../homework">Homework</a></li>
+                <li class="navbar"><a class="navbar" href="#">Registers</a></li>
+                <li class="navbar"><a class="navbar" href="#">Notifiacations</a></li>
+                <li class="navbar"><a class="navbar" href="../students/">Students</a></li>
+            </ul>
+        </nav>
+        <img src="{% static 'logo.svg' %}" alt="logo" width="10%" height="10%">
+    </header>
+</div>
+<br>
+
+<div class="container">
+    <button type="button" class="btn btn-dark"><a class="button" href="add/">Add Student</a></button>
+</div>
+<br>
+<div class="container">
+    <table class="table table-striped table-dark table-borderd table-responsive">
+        <tr>
+            <td>Students</td>
+            <td></td>
+            <td>Target</td>
+            <td>Current</td>
+        </tr>
+        {% for x in students %}
+        <tr>
+            <td>{{ x.fname }}</td>
+            <td>{{ x.lname }}</td>
+            <td>{{ x.targetGrade }}</td>
+            <td>{{ x.grade }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% include 'footer.html' %}

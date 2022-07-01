@@ -1,0 +1,35 @@
+{% load static %}
+{% include "header.html" with title="Add Student" %}
+<br>
+<div class="container">
+    <form action="addrecord/" method="post">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col">
+                <input class="form-control" name="first" placeholder="first name">
+            </div>
+            <div class="col">
+                <input class="form-control" name="last" placeholder="last name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input class="form-control" name="target" placeholder="target grade">
+            </div>
+            <div class="col">
+                <input class="form-control" name="grade" placeholder="grade">
+            </div>
+            <div class="col">
+                <input class="form-control" name="email" placeholder="email">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <textarea class="form-control" name="other" placeholder="enter any other infomation here"></textarea>
+            </div>
+        </div>
+        <input class="form-control"type="submit" value="Submit">
+    </form>
+</div>
+
+{% include 'footer.html' %}

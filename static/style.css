@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    color: #202020;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+li.navbar, a.navbar{
+    font-family: Tahoma, sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    color: #CECECE;
+    text-decoration: none;
+}
+header.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+}
+.logo{
+    cursor: pointer;
+}
+.nav_links{
+    list-style-type: none;
+}
+.nav_links li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+.nav_links li a{
+    transition: all 0.3 ease 0s;
+}
+.nav_links li a:hover{
+    color: #ffffff;
+}
+.navbar{
+    background-color: #202020;
+    border-radius: 40px;
+}
+.data{
+    color: #202020;
+}
+.button{
+    text-decoration: none;
+}

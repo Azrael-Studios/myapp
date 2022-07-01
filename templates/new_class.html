@@ -1,0 +1,32 @@
+{% load static %}
+{% include 'header.html' with title="New Class" %}
+
+<br>
+<div class="container">
+    <form id="tbl" action="addrecord/" method="post">{% csrf_token %}
+        <div class="row">
+            <div class="col">
+                <input class="form-control" name="name" placeholder="class name">
+            </div>
+            <div class="col">
+                <select class="form-control" name="teacher">
+                    {% for x in teachers %}
+                    <option value="{{ x.id }}">{{ x.first_name }} {{ x.last_name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input class="form-control" name="subject" placeholder="subject">
+            </div>
+            <div class="col">
+                <input class="form-control" type="submit" value="Submit">
+            </div>
+        </div>
+    </form>
+</div>
+
+{% comment %} <script src="{% static 'script.js' %}"></script> {% endcomment %}
+
+{% include 'footer.html' %}

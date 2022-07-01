@@ -1,0 +1,43 @@
+{% load static %}
+{% include 'header.html' with title="Homework" %}
+
+
+<br>
+<div class="container">
+    <form id="tbl" action="addrecord/" method="post">{% csrf_token %}
+        <div class="row">
+            <div class="col">
+                <input class="form-control" name="name" placeholder="name">
+            </div>
+            <div class="col">
+                <select class="form-control" name="student">
+                    {% for x in students %}
+                    <option value="{{ x.id }}">{{ x.fname }} {{ x.lname }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <select class="form-control" name="teacher">
+                    {% for x in teachers %}
+                    <option value="{{ x.id }}">{{ x.first_name }} {{ x.last_name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col">
+                <input class="form-control" name="grade" placeholder="grade">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <textarea name="task" rows='10' cols='30' class="form-control" placeholder="task"></textarea>
+                </div>
+            <div class="col">
+                <input class="form-control" type="submit" value="Submit">
+            </div>
+        </div>
+    </form>
+</div>
+
+{% include 'footer.html' %}
