@@ -29,7 +29,7 @@ def addStudent(request):                                #fine
     template = loader.get_template('addStudent.html')
     return HttpResponse(template.render({}, request))
 
-def addrecord(request):                                 #fine
+def addrecord(request):                                 # this creates a new student object in the database
     first = request.POST['first']
     last = request.POST['last']
     target = request.POST['target']
