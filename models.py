@@ -34,8 +34,6 @@ class LClass(models.Model):
     students = models.ManyToMany(Student)
     def __str__(self):
         return self.name
-    def students(self):
-        return self.students
     class Meta:
         ordering = ['name']
 
