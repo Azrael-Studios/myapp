@@ -31,6 +31,7 @@ class LClass(models.Model):
     name = models.CharField(max_length=20)
     subject = models.CharField(max_length=20)
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
+    students = models.ManyToMany(Student)
     def __str__(self):
         return self.name
     def students(self):
